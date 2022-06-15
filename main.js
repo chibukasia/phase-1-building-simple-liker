@@ -3,6 +3,27 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+const getLike = document.querySelectorAll('.like-glyph');
+const span = document.querySelectorAll('span');
+for (let singleLike of getLike){
+  singleLike.addEventListener('click', () => {
+    fetch("http://mimicServer.example.com", {
+      method : 'POST',
+      headers : {
+        'Content-Type':'application'
+      },
+      body:JSON.stringify({})
+    })
+    .then(function changeHeart(){
+      for (let singleSpan of span){
+        singleSpan.textContent = FULL_HEART;
+      }
+    })
+    .catch(function error(error){
+      document.body.innerHTML =`<p>Errror Occured</p>`
+    })
+  } )
+}
 
 
 
