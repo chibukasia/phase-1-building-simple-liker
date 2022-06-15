@@ -12,8 +12,10 @@ for (let singleLike of getLike){
     .then(function (){
       if (specificLike.innerHTML === FULL_HEART){
         specificLike.innerHTML = `${EMPTY_HEART}`
+        specificLike.className = ''
       }else{
         specificLike.innerHTML = `${FULL_HEART}`
+        specificLike.className = 'activated-heart'
       }
       
     })
