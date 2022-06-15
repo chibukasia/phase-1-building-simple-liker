@@ -18,8 +18,9 @@ for (let singleLike of getLike){
       
     })
     .catch(function error(error){
-      const clearError = ()=>document.getElementById('modal').className = '';
-      setTimeout(clearError, 300)
+      document.getElementById('modal').className = '';
+      const clearError = ()=> document.getElementById('modal').className = 'hidden'
+      setTimeout(clearError, 3000)
     })
   } )
 }
@@ -43,3 +44,6 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
     }, 300);
   });
 }
+
+
+
